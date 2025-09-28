@@ -2,7 +2,7 @@
   "name": "zk-credential-hub",
   "description": "ZK Credential Hub",
   "author": "Goketech",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/Goketech/ZkCredential-Access-Hub",
   "keywords": ["zkp", "blockchain", "midnight", "credentials", "dapp"],
   "repository": {

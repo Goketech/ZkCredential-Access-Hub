@@ -29,7 +29,7 @@
   },
   "keywords": ["zkp", "blockchain", "midnight", "credentials", "dapp"],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Goketech/ZkCredential-Access-Hub/issues"
   },
