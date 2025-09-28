@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Force dark mode for this Web3 app */
+html {
+  color-scheme: dark;
+}
+
+html.dark,
+html {
+  --background: oklch(0.08 0.01 264);
+  --foreground: oklch(0.95 0.01 264);
+  --card: oklch(0.12 0.01 264);
+  --card-foreground: oklch(0.95 0.01 264);
+  --popover: oklch(0.12 0.01 264);
+  --popover-foreground: oklch(0.95 0.01 264);
+  --primary: oklch(0.65 0.18 142);
+  --primary-foreground: oklch(0.08 0.01 264);
+  --secondary: oklch(0.18 0.01 264);
+  --secondary-foreground: oklch(0.95 0.01 264);
+  --muted: oklch(0.18 0.01 264);
+  --muted-foreground: oklch(0.65 0.01 264);
+  --accent: oklch(0.18 0.01 264);
+  --accent-foreground: oklch(0.95 0.01 264);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.95 0.01 264);
+  --border: oklch(0.22 0.01 264);
+  --input: oklch(0.16 0.01 264);
+  --ring: 221.2 83.2% 53.3%;
+  --success: 142.1 76.2% 36.3%;
+  --success-foreground: 355.7 100% 97.3%;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, 
+      oklch(0.08 0.01 264) 0%, 
+      oklch(0.12 0.01 264) 25%, 
+      oklch(0.10 0.01 264) 50%, 
+      oklch(0.12 0.01 264) 75%, 
+      oklch(0.08 0.01 264) 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+  }
+
+  .card-gradient {
+    background: linear-gradient(135deg, 
+      oklch(0.12 0.01 264) 0%, 
+      oklch(0.15 0.01 264) 100%);
+    border: 1px solid oklch(0.22 0.01 264);
+  }
+
+  .glow-effect {
+    box-shadow: 
+      0 0 20px oklch(0.65 0.18 142 / 0.1),
+      0 0 40px oklch(0.65 0.18 142 / 0.05),
+      inset 0 1px 0 oklch(0.65 0.18 142 / 0.1);
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, 
+      oklch(0.95 0.01 264) 0%, 
+      oklch(0.65 0.18 142) 50%, 
+      oklch(0.95 0.01 264) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, 
+      oklch(0.12 0.01 264), 
+      oklch(0.15 0.01 264)) padding-box,
+      linear-gradient(135deg, 
+        oklch(0.65 0.18 142 / 0.3), 
+        oklch(0.65 0.18 142 / 0.1)) border-box;
+  }
+
+  .hover-lift {
+    transition: all 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 10px 25px oklch(0.65 0.18 142 / 0.1),
+      0 0 20px oklch(0.65 0.18 142 / 0.05);
+  }
+
+  .glass-effect {
+    background: oklch(0.12 0.01 264 / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.22 0.01 264 / 0.5);
+  }
+
+  .success {
+    color: oklch(0.65 0.18 142);
+  }
+
+  .destructive {
+    color: oklch(0.55 0.2 25);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 
+      0 0 20px oklch(0.65 0.18 142 / 0.3),
+      0 0 40px oklch(0.65 0.18 142 / 0.1);
+  }
+  100% {
+    box-shadow: 
+      0 0 30px oklch(0.65 0.18 142 / 0.5),
+      0 0 60px oklch(0.65 0.18 142 / 0.2);
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .gradient-bg {
+    background-size: 200% 200%;
+  }
+  
+  .card-gradient {
+    padding: 1rem;
+  }
+  
+  .glow-effect {
+    box-shadow: 
+      0 0 15px oklch(0.65 0.18 142 / 0.1),
+      0 0 30px oklch(0.65 0.18 142 / 0.05);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.12 0.01 264);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.22 0.01 264);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.65 0.18 142 / 0.5);
+}
+
+/* Focus styles */
+.focus-ring:focus {
+  outline: 2px solid oklch(0.65 0.18 142);
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}

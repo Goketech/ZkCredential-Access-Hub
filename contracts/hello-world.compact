@@ -1,0 +1,9 @@
+pragma language_version >= 0.16 && <= 0.17;
+
+import CompactStandardLibrary;
+
+export ledger message: Bytes<11>;
+
+export circuit storeMessage(): [] {
+    message = "Hello World";
+}

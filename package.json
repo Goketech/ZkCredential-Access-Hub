@@ -1,0 +1,40 @@
+{
+  "name": "zkcredential-access-hub",
+  "version": "1.0.0",
+  "description": "Fullstack dApp for ZkCredential Access Hub on Midnight Blockchain",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && cd src/backend && npm install && cd ../frontend && npm install",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:all": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd src/backend && npm run dev",
+    "start:frontend": "cd src/frontend && npm run dev",
+    "build": "cd src/backend && npm run build && cd ../frontend && npm run build",
+    "build:backend": "cd src/backend && npm run build",
+    "build:frontend": "cd src/frontend && npm run build",
+    "test": "cd src/backend && npm test && cd ../frontend && npm test",
+    "test:backend": "cd src/backend && npm test",
+    "test:frontend": "cd src/frontend && npm test",
+    "compile:contracts": "cd contracts && compact compile CredentialRegistry.compact compiled/ && compact compile ProofVerifier.compact compiled/",
+    "clean": "rm -rf src/backend/dist src/frontend/.next src/frontend/out node_modules src/backend/node_modules src/frontend/node_modules",
+    "setup": "npm run install:all && npm run compile:contracts"
+  },
+  "workspaces": [
+    "src/backend",
+    "src/frontend"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goketech/ZkCredential-Access-Hub.git"
+  },
+  "keywords": ["zkp", "blockchain", "midnight", "credentials", "dapp"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Goketech/ZkCredential-Access-Hub/issues"
+  },
+  "homepage": "https://github.com/Goketech/ZkCredential-Access-Hub#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

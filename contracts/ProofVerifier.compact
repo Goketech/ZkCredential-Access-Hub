@@ -1,0 +1,13 @@
+pragma language_version >= 0.16 && <= 0.17;
+
+import CompactStandardLibrary;
+
+export ledger verificationResults: Bytes<8>;
+
+export circuit verifyProof(): [] {
+    verificationResults = "verified";
+}
+
+export circuit getVerificationResult(): [] {
+    // Simple check - just return empty for now
+}
