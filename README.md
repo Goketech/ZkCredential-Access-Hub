@@ -298,7 +298,7 @@ Built for **Midnight Hackathon 2025** - demonstrating privacy-preserving credent
 ## 🔗 Links
 
 - **Repository**: [GitHub](https://github.com/Goketech/ZkCredential-Access-Hub)
-- **Demo**: [Live Demo](https://zkcredential-hub.vercel.app)
+- **Demo**: [Live Demo](https://zk-credential-access-hub-frontend.vercel.app/)
 - **Documentation**: [Midnight Docs](https://docs.midnight.network/)
 
 ---
